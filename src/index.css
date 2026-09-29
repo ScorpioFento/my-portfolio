@@ -1,29 +1,32 @@
+/* Replace the contents of your src/index.css with this. */
+ 
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
-
-:root {
-  --background: 150 15% 4%;        /* #0A0D0B */
-  --foreground: 140 12% 91%;       /* #E8EDE9 */
-  --card: 150 10% 8%;              /* #12181490-ish surface */
-  --card-foreground: 140 12% 91%;
-  --border: 150 12% 14%;           /* #1F2A22 */
-  --muted-foreground: 140 8% 58%;  /* #8B9990 */
-  --primary: 150 60% 71%;          /* #6EE7A0 */
-  --primary-foreground: 150 30% 8%;
-  --accent-amber: 36 85% 65%;      /* #F2B155 — status tags only */
-  --radius: 0.75rem;
+ 
+/*
+  Tailwind v4 has no tailwind.config.js color mapping — utilities like
+  bg-background, text-primary, border-border, bg-card are generated
+  straight from these --color-* tokens. font-display / font-mono below
+  also become real font-family utilities the same way.
+*/
+@theme {
+  --color-background: #0a0d0b;
+  --color-foreground: #e8ede9;
+  --color-card: #121814;
+  --color-card-foreground: #e8ede9;
+  --color-border: #1f2a22;
+  --color-muted-foreground: #8b9990;
+  --color-primary: #6ee7a0;
+  --color-primary-foreground: #0b1a12;
+  --color-accent-amber: #f2b155;
+ 
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
-
+ 
 body {
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
-
-.font-display {
-  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-}
-
-.font-mono {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-}
+ 
